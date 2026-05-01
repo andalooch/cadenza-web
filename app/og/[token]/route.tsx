@@ -6,11 +6,10 @@ export const runtime = 'edge';
 export const contentType = 'image/png';
 export const size = { width: 1200, height: 630 };
 
-export default async function OgImage({
-  params,
-}: {
-  params: { token: string };
-}) {
+export async function GET(
+  _req: Request,
+  { params }: { params: { token: string } }
+) {
   const { data: swing } = await supabaseAdmin
     .from('swings')
     .select('id, club, captured_at, share_anonymous, user_id, selected_swing_index')
