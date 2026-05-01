@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Allow: /privacy
+Allow: /terms
+Disallow: /s/
+Disallow: /og/
+Disallow: /api/
+
+Sitemap: https://cadenzagolf.com/sitemap.xml
