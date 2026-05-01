@@ -3,8 +3,8 @@ import { ImageResponse } from 'next/og';
 import { supabaseAdmin } from '@/lib/supabase';
 
 export const runtime = 'edge';
-export const contentType = 'image/png';
-export const size = { width: 1200, height: 630 };
+
+const SIZE = { width: 1200, height: 630 };
 
 export async function GET(
   _req: Request,
@@ -40,7 +40,7 @@ export async function GET(
           </div>
         </div>
       ),
-      size
+      SIZE
     );
   }
 
@@ -115,7 +115,6 @@ export async function GET(
           fontFamily: 'system-ui',
         }}
       >
-        {/* Brand */}
         <div
           style={{
             fontSize: 28,
@@ -130,7 +129,6 @@ export async function GET(
           Cadenza
         </div>
 
-        {/* Owner + club */}
         <div
           style={{
             fontSize: 64,
@@ -147,7 +145,6 @@ export async function GET(
           {date}
         </div>
 
-        {/* Score block */}
         {score != null && grade ? (
           <div
             style={{
@@ -190,7 +187,6 @@ export async function GET(
           </div>
         )}
 
-        {/* Footer */}
         <div
           style={{
             fontSize: 24,
@@ -202,6 +198,6 @@ export async function GET(
         </div>
       </div>
     ),
-    size
+    SIZE
   );
 }
